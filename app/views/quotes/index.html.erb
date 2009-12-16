@@ -1,0 +1,21 @@
+<h4>Daily quote From ISSJHR</h4>
+<% @quotes.each do |quote| %>
+
+  <div class="press_div_odd">
+
+  <div class="press_title"><%=h quote.passage %></div>
+
+  <div class="press_description">
+    <%=h truncate(quote.content.gsub(/<.*?>/,''), :length => 270) %>
+  </div><!-- end .press_description -->
+
+  <div class="event_manage">
+      <span><%= link_to 'Edit', edit_quote_path(quote) %></span>
+  </div><!-- end .event_manage -->
+
+<br />
+
+  </div>
+
+<% end %>
+

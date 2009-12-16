@@ -1,0 +1,3 @@
+module PressesHelper
+end
+

@@ -1,0 +1,18 @@
+<h4><%=h @press.title %></h4><br />
+
+<%= @press.information %>
+
+<div id="news_article_photo_tag">
+  <b><%=h @press.location %></b><br />
+  <%=h @press.emphasis %><br /><br />
+</div>
+
+<p class="return_link">
+  <% if admin? %>
+    <span><%= link_to 'Edit', edit_press_path(@press) %></span>
+    <span> | </span>
+  <% end %>
+
+  <span><%= link_to 'Back', presses_path %></span>
+</p>
+

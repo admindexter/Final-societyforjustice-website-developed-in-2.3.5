@@ -1,0 +1,23 @@
+<h4><%=h @event.title %></h4>
+
+<div id="news_article_photo">
+  <div class="last_photo">
+    <%= image_tag @event.photo.url(:standard) %>
+  </div>
+
+  <div id="news_article_photo_tag">
+    <b><%=h @event.location %></b><br />
+    <%=h @event.emphasis %><br /><br />
+  </div>
+</div>
+            
+<%= @event.information %>
+
+<p class="return_link">
+  <% if admin? %>
+    <span><%= link_to 'Edit', edit_event_path(@event) %></span>
+    <span> | </span>
+  <% end %>
+  
+  <span><%= link_to 'Back', events_path %></span>
+</p>

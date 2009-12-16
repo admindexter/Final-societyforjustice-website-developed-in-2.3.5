@@ -1,0 +1,26 @@
+<% for gallery in @galleries %>
+  <span class="pic_pt">
+  	<table width="100%" height="100%" valign="middle">
+	  <tr>
+        <td>
+          <center>
+            <%= link_to image_tag(gallery.photo.url(:thumbnail)), gallery %>
+          </center>
+        </td>
+      </tr>
+    </table> 
+  </span>
+  
+  <span class="pic_gap"></span>
+<% end %>
+
+<div class="pagination">
+  <%= will_paginate @galleries %>
+</div>
+
+
+<% if admin? %>
+  <p class="return_link">
+	<%= link_to 'New gallery', new_gallery_path %>
+  </p>
+<% end %>

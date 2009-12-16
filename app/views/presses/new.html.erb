@@ -1,0 +1,40 @@
+<% form_for @press do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :date_of_event %><br />
+    <%= f.datetime_select :date_of_event %>
+  </p>
+  <p>
+    <%= f.label :tag %><br />
+    <%= f.text_field :tag %>
+  </p>
+  <p>
+    <%= f.label :emphasis %><br />
+    <%= f.text_field :emphasis %>
+  </p>
+  <p>
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </p>
+  <p>
+    <%= f.label :information %><br />
+    <%= f.text_area :information %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<p class="return_link">
+	<span><%= link_to 'Back', presses_path %></span>
+</p>
+

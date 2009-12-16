@@ -1,0 +1,23 @@
+<h4>Editing quote</h4>
+
+<% form_for(@quote) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :passage %><br />
+    <%= f.text_field :passage %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+
+<p class="return_link">
+  <span><%= link_to 'Back', quotes_path %></span>
+</p>
+

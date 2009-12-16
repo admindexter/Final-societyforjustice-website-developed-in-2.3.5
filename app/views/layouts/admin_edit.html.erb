@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><%= @title %></title>
+
+<%= stylesheet_link_tag 'site' %>
+</head>
+
+<body>
+
+    	<div id="sign_in_header">
+        	<div id="sign_in_header_holder">
+        		<span id="sign_in_header_text">You can be of help to others just donate or fill our guestbook!</span>
+
+        		<span id="sign_in_header_gap"></span>
+
+            	<span id="sign_in_header_img">
+            	  <%= link_to image_tag("donate.jpg"), donate_path %>
+            	</span>
+            	<% if admin? %>
+            	  <span id="quote"><%= link_to 'Quote', quotes_path %></span>
+            	  <span> | </span>
+            	  <span id="logout"><%= link_to 'Logout', logout_path %></span>
+            	<% end %>
+            </div><!-- end #sign_in_header_holder -->
+        </div><!-- end #sign_in_header -->
+
+<div id="container">
+  <div id="header">
+  	<span id="logo">
+	  	<img src="../../images/logo.jpg" width="99" height="100" alt="Society for justice logo" />
+    </span>
+
+    <span id="company_name">
+		INTERNATIONAL SOCIETY FOR SOCIAL JUSTICE AND HUMAN RIGHTS <span id="company_initials">(ISSJHR)</span>
+    </span><!-- end #company_name -->
+  </div><!-- end #header -->
+
+  <div id="navigator">
+  	<span id="left_navigator">
+    </span><!-- end #left_navigator -->
+  	<span class="seperator">
+    </span><!-- end .seperator -->
+  	<span class="button"><%= link_to_unless_current 'Home', home_path %>
+    </span><!-- end .button -->
+  	<span class="seperator">
+    </span><!-- end .seperator -->
+  	<span class="button"><%= link_to_unless_current 'Articles', articles_path %>
+    </span><!-- end .button -->
+  	<span class="seperator">
+    </span><!-- end .seperator -->
+  	<span class="button"><%= link_to_unless_current 'Galleries', galleries_path %>
+    </span><!-- end .button -->
+  	<span class="seperator">
+    </span><!-- end .seperator -->
+  	<span class="button"><%= link_to_unless_current 'Presses', presses_path %>
+    </span><!-- end .button -->
+  	<span class="seperator">
+    </span><!-- end .seperator -->
+  	<span class="button"><%= link_to_unless_current 'Events', events_path %>
+    </span><!-- end .button -->
+  	<span class="seperator">
+    </span><!-- end .seperator -->
+  	<span class="button"><%= link_to_unless_current 'About Us', about_path %>
+    </span><!-- end .button -->
+  	<span class="seperator">
+    </span><!-- end .seperator -->
+  	<span class="button"><%= link_to_unless_current 'Staff', staff_path %>
+    </span><!-- end .button -->
+  	<span class="seperator">
+    </span><!-- end .seperator -->
+  	<span class="button"><%= link_to_unless_current 'Contact', contact_path %>
+    </span><!-- end .button -->
+  	<span class="seperator">
+    </span><!-- end .seperator -->
+  	<span id="right_navigator">
+    </span><!-- end #right_navigator -->
+  </div><!-- end #navigator -->
+
+  <% unless flash[:notice].nil? %>
+    <div id="flash_board">
+	  <div id="flash_notice"><%= flash[:notice] %></div>
+	</div><!-- end #flash_board -->
+  <% end %>
+
+  <% unless flash[:error].nil? %>
+    <div id="flash_board">
+	  <div id="flash_error"><%= flash[:error] %></div>
+	</div><!-- end #flash_board -->
+  <% end %>
+
+<div id="content_division_3">
+
+<div id="event_gap">
+</div><!-- end #event_gap -->
+
+<div id="content_box_event">
+
+  <div class="content_box_header">
+
+    <span class="content_box_header_left">
+  	</span><!-- end .content_box_header_left -->
+
+   	  		<span id="content_box_header_middle_event">
+   	  		  <div class="content_top_text"><%= @title %></div>
+	  		</span><!-- end content_box_header_middle_event -->
+
+   		  	<span class="content_box_header_right">
+  			</span><!-- end .content_box_header_right -->
+
+  		</div><!-- end .content_box_header -->
+
+		<div id="content_box_middle_right_event">
+  		  <div id="content_box_middle_left_event">
+  		  	<div id="form_contents">
+  		  	<!-- Events content -->
+
+			<%= yield %>
+
+			<!-- end Events content -->
+
+			</div><!-- end #form_contents -->
+  		  </div><!-- end #content_box_middle_left_event -->
+		</div><!-- end #content_box_middle_right_event -->
+
+   	  	<div class="content_box_footer">
+
+	        <span class="content_box_footer_left">
+  			</span><!-- end .content_box_footer_left -->
+
+   	  		<span id="content_box_footer_middle_event">
+	  		</span><!-- end #content_box_footer_middle_event -->
+
+   		  	<span class="content_box_footer_right">
+  			</span><!-- end .content_box_footer_right -->
+
+  		</div><!-- end .content_box_footer -->
+
+  	</div><!-- end #content_box_event -->
+
+  </div><!-- end #content_division_3 -->
+
+<div id="footer_gap">
+</div><!-- end #footer_gap -->
+
+
+</div><!-- end #container -->
+
+<div id="footer_top_border">
+<!-- end #footer --></div>
+
+<div id="footer">
+  	<div id="copyright">&copy; 2007 International Society for Social Justice and Human Rights (ISSJHR) . All rights reserved. <span id="powered_by">Powered by CMN Intl'.</span>
+	<!-- end #copyright --></div>
+<!-- end #footer --></div>
+
+</body>
+</html>
+
+</body>
+</html>
+

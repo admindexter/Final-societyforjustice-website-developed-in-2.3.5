@@ -1,0 +1,48 @@
+<% @events.each do |event| %>                
+<div valign="top" class="<%= cycle('articles_div_odd', 'articles_div_even') %>">
+
+  <span class="articles_div_gap_2">
+  </span><!-- end .articles_div_gap_2 -->
+                
+  <span class="articles_div_photo_holder">
+    <div class="articles_div_photo">
+      <%= image_tag event.photo.url(:medium) %>
+    </div><!-- end .articles_div_photo -->
+  </span><!-- end .articles_div_photo_holder -->
+              
+  <span class="articles_div_gap_1">
+  </span><!-- end .articles_div_gap_1 -->
+              
+  <span class="articles_div_gap_2">
+  </span><!-- end .articles_div_gap_2 -->
+
+  <span class="articles_div_details">
+    <div class="last_title"><%=h truncate(event.title.gsub(/<.*?>/,''), :length => 40) %></div>
+
+    <div class="last_description"><%=h truncate(event.information.gsub(/<.*?>/,''), :length => 320) %></div>
+    
+    <div class="event_manage">
+  	  <span><%= link_to 'Show', event %></span>
+  	  
+      <% if admin? %>
+        <span> | </span>
+        <span><%= link_to 'Edit', edit_event_path(event) %></span>
+        <span> | </span>
+        <span><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></span>
+      <% end %>
+    </div><!-- end .event_manage -->
+
+  </span><!-- end .articles_div_details -->
+
+</div><!-- end .articles_div_odd -->
+<% end %>
+
+<div class="pagination">
+  <%= will_paginate @events %>
+</div><!-- end .pagination -->
+
+<% if admin? %>
+  <p class="return_link">
+	<span><%= link_to 'New event', new_event_path %></span>
+  </p>
+<% end %>

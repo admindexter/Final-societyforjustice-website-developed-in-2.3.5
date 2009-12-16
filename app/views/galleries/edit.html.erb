@@ -1,0 +1,29 @@
+<% form_for @gallery, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </p>
+  <p>
+    <%= f.label :date_of_event %><br />
+    <%= f.datetime_select :date_of_event %>
+  </p>
+  <p>
+    <%= f.file_field :photo %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+
+<p class="return_link">
+	<span><%= link_to 'Show', @gallery %></span>
+	<span> | </span>
+	<span><%= link_to 'Back', galleries_path %></span>
+</p>

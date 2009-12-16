@@ -1,0 +1,129 @@
+<div id="about_img">
+
+  <img src="../images/donate_img.jpg" width="600" height="200" alt="ISSJHR about us image" />
+
+</div><!-- end .about_img -->
+
+<h2>INTERNATIONAL SOCIETY FOR SOCIAL JUSTICE AND HUMAN RIGHTS (ISSJHR)</h2>
+
+<p><em>"Your Right to Social justice and Good Governance is Non-negotiable"</em> </p>
+<br />
+
+<h4>Current Account For ISSJHR</h4>
+<p>
+  <b>Name:</b>
+  <%= @last_account.name %>
+</p>
+
+<p>
+
+  <b>Ac number:</b>
+  <%= @last_account.ac_number %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @last_account.location %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @last_account.address %>
+
+
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @last_account.description %>
+</p>
+
+<p>
+  <b>Other info:</b>
+  <%= @last_account.other_info %>
+</p>
+
+<% if admin? %>
+  <p class="return_link">
+    <%= link_to 'Edit', edit_account_path(@last_account) %>
+  </p>
+<% end %>
+
+
+<br />
+<h4>Dormicilliary Account For ISSJHR</h4>
+<p>
+  <b>Name:</b>
+  <%= @last_dorm_account.name %>
+</p>
+
+<p>
+
+  <b>Ac number:</b>
+  <%= @last_dorm_account.ac_number %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @last_dorm_account.location %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @last_dorm_account.address %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @last_dorm_account.description %>
+</p>
+
+<p>
+  <b>Other info:</b>
+  <%= @last_dorm_account.other_info %>
+</p>
+
+<% if admin? %>
+  <p class="return_link">
+    <%= link_to 'Edit', edit_dorm_account_path(@last_dorm_account) %>
+  </p>
+<% end %>
+
+<br />
+<h4>Please Fill Our Guestbook</h4>
+
+
+<% form_for(@guestbook) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname %>
+  </p>
+  <p>
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<% if admin? %>
+  <div class="return_link">
+    <%= link_to 'View guest list', guestbooks_path %>
+  </div>
+<% end %>
+

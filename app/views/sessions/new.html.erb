@@ -1,0 +1,15 @@
+<h4>Please login!</h4><br />
+
+<div class="content">
+  <p>
+  	<% form_tag sessions_path do |f| %>
+  <span>
+  	<span id="password">Password:</span> <span><%= password_field_tag :password %></span>
+  </span>
+
+  <span>
+    <%= submit_tag 'Login' %>
+  </span>
+  	<% end %>
+  </p>
+</div>

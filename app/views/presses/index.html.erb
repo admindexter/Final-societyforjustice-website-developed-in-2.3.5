@@ -1,0 +1,40 @@
+<h4>Listing Of Press Releases From ISSJHR</h4>
+<% @presses.each do |press| %>
+
+  <div class="<%= cycle('press_div_odd', 'press_div_even') %>">
+
+  <div class="press_title"><%=h press.title %></div>
+
+  <div class="press_description">
+    <%=h truncate(press.information.gsub(/<.*?>/,''), :length => 270) %>
+  </div><!-- end .press_description -->
+
+  <div class="press_author">
+    <%=h press.author %>
+  </div><!-- end .press_author -->
+
+  <div class="event_manage">
+    <span><%= link_to 'Show', press %></span>
+
+    <% if admin? %>
+      <span> | </span>
+      <span><%= link_to 'Edit', edit_press_path(press) %></span>
+      <span> | </span>
+      <span><%= link_to 'Destroy', press, :confirm => 'Are you sure?', :method => :delete %></span>
+    <% end %>
+  </div><!-- end .event_manage -->
+
+<br />
+
+  </div>
+
+<% end %>
+
+<div class="pagination">
+  <%= will_paginate @presses %>
+</div><!-- end .pagination -->
+
+<p class="return_link">
+	<span><%= link_to 'New press', new_press_path %></span>
+</p>
+

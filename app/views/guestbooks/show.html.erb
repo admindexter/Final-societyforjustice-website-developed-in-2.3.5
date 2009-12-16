@@ -1,0 +1,28 @@
+<p>
+  <b>Title:</b>
+  <%=h @guestbook.title %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  <%=h @guestbook.firstname %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%=h @guestbook.lastname %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @guestbook.email %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%=h @guestbook.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_guestbook_path(@guestbook) %> |
+<%= link_to 'Back', guestbooks_path %>

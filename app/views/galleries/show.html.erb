@@ -1,0 +1,22 @@
+<div id="gallery_picture">
+  <%= image_tag @gallery.photo.url(:preview) %>
+</div><!-- end #gallery_picture -->
+
+<div id="gallery_picture_details">
+  <h4 id="gallery_picture_details_text"><%=h @gallery.title %></h4>
+</div><!-- end #gallery_picture_details -->  
+
+<p>
+  <span><%=h @gallery.date_of_event.to_s(:event_date) %></span><span> at </span><span><%=h @gallery.location %></span>
+</p>
+
+<p class="return_link">
+  <% if admin? %>
+    <span><%= link_to 'Edit', edit_gallery_path(@gallery) %></span>
+    <span> | </span>
+    <span><%= link_to 'Destroy', @gallery, :confirm => 'Are you sure?', :method => :delete %></span>
+    <span> | </span>
+  <% end %>
+  
+  <span><%= link_to 'Back', galleries_path %></span>
+</p>

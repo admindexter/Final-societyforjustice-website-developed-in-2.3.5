@@ -1,0 +1,217 @@
+   		<div class="content_box">
+        	<div class="content_box_header">
+            	<span class="content_box_header_left">
+                </span><!-- end .content_box_header_left -->
+            <span class="content_box_header_middle">
+            	<div class="content_top_text">Our First Article</div>
+            </span><!-- end .content_box_header_middle -->
+
+            <span class="content_box_header_right">
+            </span><!-- end .content_box_header_right -->
+        </div><!-- end .content_box_header -->
+
+        <div class="content_box_middle">
+        	<span class="content_box_middle_left">
+            </span><!-- end .content_box_middle_left -->
+
+            <span class="content_box_middle_middle">
+            	<span class="photo_div">
+                	<div class="home_last_photo">
+                	  <table width="100%" height="100%" valign="middle">
+                	  	<tr>
+                	  	  <td>
+                	  	  	<center>
+                            <%- if @first_article %>
+                              <%= image_tag @first_article.photo.url(:medium) %>
+                            <%- else %>
+                              <%= image_tag "temporal_press_image.jpg" %>
+                            <%- end %>
+                	  	  	</center>
+                	  	  </td>
+                	  	</tr>
+                	  </table>
+                    </div><!-- end .last_photo -->
+                </span><!-- end .photo_div -->
+
+                <span class="photo_title_gap_border">
+                </span><!-- end .photo_title_gap_border -->
+
+                <span class="photo_title_gap">
+                </span><!-- end .photo_title_gap -->
+
+                <span class="title_description_div">
+                	<div class="last_title">
+                    <%- if @first_article %>
+                      <%= @first_article.title %>
+                    <%- else %>
+                      <%- @temporal_title = 'Temporal title' %>
+                      <%= @temporal_title %>
+                    <%- end %>
+                  </div>
+
+                  <div class="last_description">
+                    <%- if @first_article %>
+                      <%=h truncate(@first_article.information.gsub(/<.*?>/,''), :length => 320) %>
+                    <%- else %>
+                      <%- @temporal_description = 'Temporal description' %>
+                      <%= @temporal_description %>
+                    <%- end %>
+                  </div>
+               </span><!-- end .title_description_div -->
+            </span><!-- end .content_box_middle_middle -->
+
+            <span class="content_box_middle_right">
+            </span><!-- end .content_box_middle_right -->
+         </div><!-- end .content_box_middle -->
+
+         <div class="content_box_footer">
+         	<span class="content_box_footer_left">
+            </span><!-- end .content_box_footer_left -->
+
+            <span class="content_box_footer_middle">
+            </span><!-- end .content_box_footer_middle -->
+
+            <span class="content_box_footer_right">
+            </span><!-- end .content_box_footer_right -->
+         </div><!-- end .content_box_footer -->
+      </div><!-- end .content_box -->
+
+            <div class="content_button">
+            	<%= link_to image_tag("view_more_content_button.jpg"), articles_path %>
+            </div><!-- end .content_button -->
+
+            <div class="content_button_gap">
+            </div><!-- end .content_button -->
+
+			<div class="content_box">
+      		<div class="content_box_header">
+            	<span class="content_box_header_left">
+              	</span><!-- end .content_box_header_left -->
+
+                <span class="content_box_header_middle">
+                	<div class="content_top_text">Our Last Article</div>
+                </span><!-- end .content_box_header_middle -->
+
+                <span class="content_box_header_right">
+                </span><!-- end .content_box_header_right -->
+            </div><!-- end .content_box_header -->
+
+            <div class="content_box_middle">
+            	<span class="content_box_middle_left">
+                </span><!-- end .content_box_middle_left -->
+
+            <span class="content_box_middle_middle">
+            	<span class="photo_div">
+                	<div class="home_last_photo">
+                	  <table width="100%" height="100%" valign="middle">
+                	  	<tr>
+                	  	  <td>
+                	  	  	<center>
+                            <%- if @last_article %>
+                              <%= image_tag @last_article.photo.url(:medium) %>
+                            <%- else %>
+                              <%= image_tag "temporal_press_image.jpg" %>
+                            <%- end %>
+                	  	  	</center>
+                	  	  </td>
+                	  	</tr>
+                	  </table>
+                    </div><!-- end .last_photo -->
+                </span><!-- end .photo_div -->
+
+                <span class="photo_title_gap_border">
+                </span><!-- end .photo_title_gap_border -->
+
+                <span class="photo_title_gap">
+                </span><!-- end .photo_title_gap -->
+
+                <span class="title_description_div">
+                	<div class="last_title">
+                    <%- if @last_article %>
+                      <%= @last_article.title %>
+                    <%- else %>
+                      <%- @temporal_event = 'Temporal event' %>
+                      <%= @temporal_event %>
+                    <%- end %>
+                  </div>
+
+                  <div class="last_description">
+                    <%- if @last_article %>
+                      <%=h truncate(@last_article.information.gsub(/<.*?>/,''), :length => 320) %>
+                    <%- else %>
+                      <%- @temporal_description = 'Temporal description' %>
+                      <%= @temporal_description %>
+                    <%- end %>
+                  </div>
+               </span><!-- end .title_description_div -->
+            </span><!-- end .content_box_middle_middle -->
+
+            <span class="content_box_middle_right">
+            </span><!-- end .content_box_middle_right -->
+         </div><!-- end .content_box_middle -->
+
+         <div class="content_box_footer">
+         	<span class="content_box_footer_left">
+            </span><!-- end .content_box_footer_left -->
+
+            <span class="content_box_footer_middle">
+            </span><!-- end .content_box_footer_middle -->
+
+            <span class="content_box_footer_right">
+            </span><!-- end .content_box_footer_right -->
+         </div><!-- end .content_box_footer -->
+      </div><!-- end .content_box -->
+
+            <div class="content_button">
+            	<%= link_to image_tag("view_more_content_button.jpg"), articles_path %>
+            </div><!-- end .content_button -->
+
+            <div class="content_button_gap">
+            </div><!-- end .content_button -->
+
+            <div id="content_box_1">
+
+             	<div id="content_box_1_top">
+                	<span id="content_box_1_top_left">
+                    </span><!-- end #content_box_1_top_left -->
+
+                	<span id="content_box_1_top_middle">
+                    </span><!-- end #content_box_1_top_middle -->
+
+                	<span id="content_box_1_top_right">
+                    </span><!-- end #content_box_1_top_right -->
+                </div><!-- end #content_box_1_top -->
+
+             	<div id="content_box_1_middle">
+                	<span id="content_box_1_middle_left">
+                    </span><!-- end #content_box_1_middle_left -->
+
+                	<span id="content_box_1_middle_middle">
+                    	<div class="content_box_1_about_us">About Us
+                        </div><!-- end .content_box_1_about_us -->
+
+                        	<div id="about_text">
+The International Society for Social justice and Human Rights  (ISSJHR), the new name of the entity that had championed good governance and human rights from the south south part of Nigeria, was incorporated under the Corporate Affairs Commission in Nigeria in 2009. It had initially operated as...
+							</div><!-- end .about_text -->
+
+                         <div id="read_more_about"><%= link_to 'Read More', about_path %></div>
+                    </span><!-- end #content_box_1_middle_middle -->
+
+                	<span id="content_box_1_middle_right">
+                    </span><!-- end #content_box_1_middle_right -->
+                </div>
+             	<!-- end #sidebar_middle -->
+
+             	<div id="content_box_1_bottom">
+                	<span id="content_box_1_bottom_left">
+                    </span><!-- end #content_box_1_bottom_left -->
+
+                	<span id="content_box_1_bottom_middle">
+                    </span><!-- end #content_box_1_bottom_middle -->
+
+                	<span id="content_box_1_bottom_right">
+                    </span><!-- end #content_box_1_bottom_right -->
+                </div><!-- end #content_box_1_bottom -->
+
+            </div><!-- end #content_box_1 -->
+
