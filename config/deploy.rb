@@ -12,7 +12,7 @@ set :password, "3digital"
 
 # GIT information
 default_run_options[:pty] = true
-set :repository,  "git://github.com/admindexter/Another-repository-for-societyforjustice-website.git"
+set :repository,  "git://github.com/admindexter/Final-societyforjustice-website-developed-in-2.3.5.git"
 
 set :scm, "git"
 set :branch, "master"
