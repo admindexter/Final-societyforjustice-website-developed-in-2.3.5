@@ -20,5 +20,5 @@ production:
   database: dextersm_production
   username: dextersm_society
   password: 3digital
-  host: dextersmart.com
+  host: localhost
 
