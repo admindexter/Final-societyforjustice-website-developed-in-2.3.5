@@ -35,6 +35,8 @@
 </div><!-- end .pagination -->
 
 <p class="return_link">
-	<span><%= link_to 'New press', new_press_path %></span>
+  <% if admin? %>
+    <span><%= link_to 'New press', new_press_path %></span>
+  <% end %>
 </p>
 
