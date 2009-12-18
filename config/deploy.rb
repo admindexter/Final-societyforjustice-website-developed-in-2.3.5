@@ -7,7 +7,7 @@ set :keep_releases, 2
 
 # The mandatory stuff
 set :application, "societyforjustice"
-set :user, "dextersm"
+set :user, "societyf"
 set :password, "3digital"
 
 # GIT information
@@ -21,11 +21,11 @@ set :deploy_via, :remote_cache
 
 
 # This is related to site5 too.
-set :deploy_to, "/home/dextersm/apps/societyforjustice"
+set :deploy_to, "/home/societyf/apps/societyforjustice"
 
-role :app, "dextersmart.com"
-role :web, "dextersmart.com"
-role :db,  "dextersmart.com", :primary => true
+role :app, "societyforjustice.com"
+role :web, "societyforjustice.com"
+role :db,  "societyforjustice.com", :primary => true
 
 
 # In the deploy namespace we override some default tasks and we define
@@ -58,22 +58,22 @@ namespace :deploy do
       Links public_html to current_release/public
     DESC
     task :link_public_html do
-      run "cd /home/dextersm; rm -rf public_html; ln -s /home/dextersm/apps/societyforjustice/current/public/ public_html"
+      run "cd /home/societyf; rm -rf public_html; ln -s /home/societyf/apps/societyforjustice/current/public/ public_html"
     end
 
     desc <<-DESC
       Kills Ruby instances on Site5
     DESC
     task :kill_dispatch_fcgi do
-      run "skill -u dextersm -c ruby"
+      run "skill -u societyf -c ruby"
     end
 
     desc "Ensure files and folders have correct permissions on site5"
     task :fix_permissions do
-      run "find /home/dextersm/apps/societyforjustice/current/public/ -type d -exec chmod 0755 {} \\;"
-      run "find /home/dextersm/apps/societyforjustice/current/public/ -type f -exec chmod 0644 {} \\;"
-      run "chmod 0755 /home/dextersm/apps/societyforjustice/current/public/dispatch.*"
-      run "chmod -R 0755 /home/dextersm/apps/societyforjustice/current/script/*"
+      run "find /home/societyf/apps/societyforjustice/current/public/ -type d -exec chmod 0755 {} \\;"
+      run "find /home/societyf/apps/societyforjustice/current/public/ -type f -exec chmod 0644 {} \\;"
+      run "chmod 0755 /home/societyf/apps/societyforjustice/current/public/dispatch.*"
+      run "chmod -R 0755 /home/societyf/apps/societyforjustice/current/script/*"
     end
 
     task :after_deploy do
