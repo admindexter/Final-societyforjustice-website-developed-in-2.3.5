@@ -23,9 +23,9 @@ set :deploy_via, :remote_cache
 # This is related to site5 too.
 set :deploy_to, "/home/societyf/apps/societyforjustice"
 
-role :app, "societyforjustice.com"
-role :web, "societyforjustice.com"
-role :db,  "societyforjustice.com", :primary => true
+role :app, "societyforjustice.org"
+role :web, "societyforjustice.org"
+role :db,  "societyforjustice.org", :primary => true
 
 
 # In the deploy namespace we override some default tasks and we define
