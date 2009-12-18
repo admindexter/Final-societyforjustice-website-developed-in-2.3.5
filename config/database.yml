@@ -17,8 +17,8 @@ test:
 
 production:
   adapter: mysql
-  database: dextersm_production
-  username: dextersm_society
+  database: societyf_production
+  username: societyf_society
   password: 3digital
   host: localhost
 
